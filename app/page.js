@@ -50,132 +50,73 @@ const HomePage = () => {
 
   return (
     <div className={`min-h-screen ${darkMode ? "dark" : ""}`}>
-      <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
-        {/* Navbar */}
-        <nav className="bg-gray-100 dark:bg-gray-800 p-4 sticky top-0 z-50">
-          <div className="container mx-auto flex justify-between items-center">
-            <Link
-              href="/"
-              className="text-2xl font-bold text-blue-600 dark:text-blue-400"
-            >
-              FutureVolt
-            </Link>
-            <div className="hidden md:flex items-center space-x-6 flex-grow justify-center">
-              <Link
-                href="/"
-                className="hover:text-blue-600 dark:hover:text-blue-400"
-              >
-                Home
-              </Link>
-              <Link
-                href="/services"
-                className="hover:text-blue-600 dark:hover:text-blue-400"
-              >
-                Services
-              </Link>
-              <Link
-                href="/about"
-                className="hover:text-blue-600 dark:hover:text-blue-400"
-              >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className="hover:text-blue-600 dark:hover:text-blue-400"
-              >
-                Contact
-              </Link>
-            </div>
-            <div className="flex items-center space-x-4">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-              >
-                <Icon icon="mdi:facebook" className="text-2xl" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-300 hover:text-blue-400"
-              >
-                <Icon icon="mdi:twitter" className="text-2xl" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-300 hover:text-blue-700"
-              >
-                <Icon icon="mdi:linkedin" className="text-2xl" />
-              </a>
-              <button
-                onClick={toggleDarkMode}
-                className="p-2 rounded-full bg-gray-200 dark:bg-gray-700"
-              >
-                <Icon
-                  icon={
-                    darkMode
-                      ? "mdi:white-balance-sunny"
-                      : "mdi:moon-waning-crescent"
-                  }
-                  className="text-2xl"
-                />
-              </button>
-            </div>
-          </div>
-        </nav>
+    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+      {/* Navbar */}
+      <nav className="bg-gray-100 dark:bg-gray-800 p-4 sticky top-0 z-50">
+        <div className="container mx-auto flex justify-between items-center">
+          <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+            FutureVolt
+          </Link>
+          
 
-        {/* Mobile Menu */}
-        <div
-          className={`fixed inset-0 bg-gray-100 dark:bg-gray-800 z-50 flex flex-col items-center justify-center ${
-            menuOpen ? "block" : "hidden"
-          } md:hidden`}
-        >
-          <button onClick={toggleMenu} className="absolute top-4 right-4 p-2">
-            <Icon icon="mdi:close" className="text-2xl" />
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-6 flex-grow justify-center">
+            <Link href="/" className="hover:text-blue-600 dark:hover:text-blue-400">Home</Link>
+            <Link href="/services" className="hover:text-blue-600 dark:hover:text-blue-400">Services</Link>
+            <Link href="/about" className="hover:text-blue-600 dark:hover:text-blue-400">About</Link>
+            <Link href="/contact" className="hover:text-blue-600 dark:hover:text-blue-400">Contact</Link>
+          </div>
+
+          {/* Social Icons and Dark Mode Toggle (always visible) */}
+          <div className="flex items-center space-x-4">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+              <Icon icon="mdi:facebook" className="text-2xl" />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-blue-400">
+              <Icon icon="mdi:twitter" className="text-2xl" />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-blue-700">
+              <Icon icon="mdi:linkedin" className="text-2xl" />
+            </a>
+            <button onClick={toggleDarkMode} className="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
+              <Icon icon={darkMode ? "mdi:white-balance-sunny" : "mdi:moon-waning-crescent"} className="text-2xl" />
+            </button>
+          </div>
+           {/* Hamburger Button */}
+           <button onClick={toggleMenu} className="md:hidden text-3xl">
+            <Icon icon="mdi:menu" />
           </button>
-          <ul className="text-center space-y-8">
-            <li>
-              <Link
-                href="/"
-                className="text-2xl hover:text-blue-600 dark:hover:text-blue-400"
-                onClick={toggleMenu}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/services"
-                className="text-2xl hover:text-blue-600 dark:hover:text-blue-400"
-                onClick={toggleMenu}
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about"
-                className="text-2xl hover:text-blue-600 dark:hover:text-blue-400"
-                onClick={toggleMenu}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="text-2xl hover:text-blue-600 dark:hover:text-blue-400"
-                onClick={toggleMenu}
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
         </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      <div className={`fixed inset-0 bg-gray-100 dark:bg-gray-800 z-50 flex flex-col items-center justify-center ${menuOpen ? "block" : "hidden"} md:hidden`}>
+        <button onClick={toggleMenu} className="absolute top-4 right-4 p-2">
+          <Icon icon="mdi:close" className="text-2xl" />
+        </button>
+        <ul className="text-center space-y-8">
+          <li>
+            <Link href="/" className="text-2xl hover:text-blue-600 dark:hover:text-blue-400" onClick={toggleMenu}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/services" className="text-2xl hover:text-blue-600 dark:hover:text-blue-400" onClick={toggleMenu}>
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link href="/about" className="text-2xl hover:text-blue-600 dark:hover:text-blue-400" onClick={toggleMenu}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact" className="text-2xl hover:text-blue-600 dark:hover:text-blue-400" onClick={toggleMenu}>
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </div>
 
         {/* Hero Section */}
         <header className="relative bg-gray-900 text-white py-20 px-4 text-center">

@@ -256,7 +256,7 @@ const HomePage = () => {
 
         {/* Footer */}
         <footer className="bg-gray-200 dark:bg-gray-800 py-8 px-4 text-center">
-          <p>&copy; 2024 FutureVolt Electricians. All rights reserved.</p>
+          <p>&copy; Parikalpana.io</p>
         </footer>
       </div>
     </div>
